@@ -1,0 +1,1 @@
+export { PatientWaitlistNavigationSection } from "./PatientWaitlistNavigationSection";

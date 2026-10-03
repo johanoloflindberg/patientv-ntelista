@@ -1,0 +1,1 @@
+export { ElementNyPminnelse } from "./ElementNyPminnelse";

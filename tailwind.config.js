@@ -1,0 +1,108 @@
+module.exports = {
+  content: [
+    "./src/**/*.{html,js,ts,jsx,tsx}",
+    "app/**/*.{ts,tsx}",
+    "components/**/*.{ts,tsx}",
+  ],
+  corePlugins: { preflight: true },
+  theme: {
+    extend: {
+      colors: {
+        "color-color-bg-page": "var(--color-color-bg-page)",
+        "color-color-bg-subtle": "var(--color-color-bg-subtle)",
+        "color-color-bg-surface": "var(--color-color-bg-surface)",
+        "color-color-border-default": "var(--color-color-border-default)",
+        "color-color-border-strong": "var(--color-color-border-strong)",
+        "color-color-danger-default": "var(--color-color-danger-default)",
+        "color-color-danger-subtle": "var(--color-color-danger-subtle)",
+        "color-color-primary-default": "var(--color-color-primary-default)",
+        "color-color-primary-subtle": "var(--color-color-primary-subtle)",
+        "color-color-success-default": "var(--color-color-success-default)",
+        "color-color-success-subtle": "var(--color-color-success-subtle)",
+        "color-color-text-muted": "var(--color-color-text-muted)",
+        "color-color-text-primary": "var(--color-color-text-primary)",
+        "color-color-text-secondary": "var(--color-color-text-secondary)",
+        "color-color-warning-default": "var(--color-color-warning-default)",
+        "color-color-warning-subtle": "var(--color-color-warning-subtle)",
+        "primitives-blue-500": "var(--primitives-blue-500)",
+        "primitives-gray-100": "var(--primitives-gray-100)",
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
+      },
+      fontFamily: {
+        "body-medium": "var(--body-medium-font-family)",
+        "body-regular": "var(--body-regular-font-family)",
+        "button-label": "var(--button-label-font-family)",
+        caption: "var(--caption-font-family)",
+        "display-metric": "var(--display-metric-font-family)",
+        "heading-l": "var(--heading-l-font-family)",
+        "heading-m": "var(--heading-m-font-family)",
+        "heading-XL": "var(--heading-XL-font-family)",
+        small: "var(--small-font-family)",
+        "table-header": "var(--table-header-font-family)",
+        sans: [
+          "ui-sans-serif",
+          "system-ui",
+          "sans-serif",
+          '"Apple Color Emoji"',
+          '"Segoe UI Emoji"',
+          '"Segoe UI Symbol"',
+          '"Noto Color Emoji"',
+        ],
+      },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
+      },
+      keyframes: {
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+      },
+    },
+    container: { center: true, padding: "2rem", screens: { "2xl": "1400px" } },
+  },
+  plugins: [],
+  darkMode: ["class"],
+};

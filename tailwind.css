@@ -1,0 +1,313 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .all-unset {
+    all: unset;
+  }
+}
+
+@import url("https://fonts.googleapis.com/css?family=Inter:400,500,700,600");
+
+:root {
+  --body-medium-font-family: "Inter", Helvetica;
+  --body-medium-font-size: 14px;
+  --body-medium-font-style: normal;
+  --body-medium-font-weight: 500;
+  --body-medium-letter-spacing: 0px;
+  --body-medium-line-height: 20px;
+  --body-regular-font-family: "Inter", Helvetica;
+  --body-regular-font-size: 14px;
+  --body-regular-font-style: normal;
+  --body-regular-font-weight: 400;
+  --body-regular-letter-spacing: 0px;
+  --body-regular-line-height: 20px;
+  --button-label-font-family: "Inter", Helvetica;
+  --button-label-font-size: 14px;
+  --button-label-font-style: normal;
+  --button-label-font-weight: 600;
+  --button-label-letter-spacing: 0px;
+  --button-label-line-height: 20px;
+  --caption-font-family: "Inter", Helvetica;
+  --caption-font-size: 11px;
+  --caption-font-style: normal;
+  --caption-font-weight: 400;
+  --caption-letter-spacing: 0px;
+  --caption-line-height: 15px;
+  --color-color-bg-page: var(--primitives-gray-50);
+  --color-color-bg-subtle: var(--primitives-gray-25);
+  --color-color-bg-surface: var(--primitives-white);
+  --color-color-border-default: var(--primitives-gray-200);
+  --color-color-border-strong: var(--primitives-gray-300);
+  --color-color-danger-default: var(--primitives-red-600);
+  --color-color-danger-subtle: var(--primitives-red-50);
+  --color-color-primary-default: var(--primitives-blue-600);
+  --color-color-primary-subtle: var(--primitives-blue-50);
+  --color-color-success-default: var(--primitives-green-600);
+  --color-color-success-subtle: var(--primitives-green-50);
+  --color-color-text-muted: var(--primitives-gray-500);
+  --color-color-text-primary: var(--primitives-gray-900);
+  --color-color-text-secondary: var(--primitives-gray-700);
+  --color-color-warning-default: var(--primitives-amber-600);
+  --color-color-warning-subtle: var(--primitives-amber-50);
+  --display-metric-font-family: "Inter", Helvetica;
+  --display-metric-font-size: 32px;
+  --display-metric-font-style: normal;
+  --display-metric-font-weight: 700;
+  --display-metric-letter-spacing: 0px;
+  --display-metric-line-height: 38px;
+  --heading-l-font-family: "Inter", Helvetica;
+  --heading-l-font-size: 22px;
+  --heading-l-font-style: normal;
+  --heading-l-font-weight: 600;
+  --heading-l-letter-spacing: 0px;
+  --heading-l-line-height: 28px;
+  --heading-m-font-family: "Inter", Helvetica;
+  --heading-m-font-size: 18px;
+  --heading-m-font-style: normal;
+  --heading-m-font-weight: 600;
+  --heading-m-letter-spacing: 0px;
+  --heading-m-line-height: 24px;
+  --heading-XL-font-family: "Inter", Helvetica;
+  --heading-XL-font-size: 28px;
+  --heading-XL-font-style: normal;
+  --heading-XL-font-weight: 700;
+  --heading-XL-letter-spacing: 0px;
+  --heading-XL-line-height: 34px;
+  --primitives-amber-50: rgba(255, 251, 235, 1);
+  --primitives-amber-600: rgba(217, 119, 6, 1);
+  --primitives-blue-50: rgba(239, 246, 255, 1);
+  --primitives-blue-500: rgba(59, 130, 246, 1);
+  --primitives-blue-600: rgba(37, 99, 235, 1);
+  --primitives-gray-100: rgba(241, 245, 249, 1);
+  --primitives-gray-200: rgba(226, 232, 240, 1);
+  --primitives-gray-25: rgba(252, 252, 253, 1);
+  --primitives-gray-300: rgba(203, 213, 225, 1);
+  --primitives-gray-50: rgba(248, 250, 252, 1);
+  --primitives-gray-500: rgba(100, 116, 139, 1);
+  --primitives-gray-700: rgba(51, 65, 85, 1);
+  --primitives-gray-900: rgba(15, 23, 42, 1);
+  --primitives-green-50: rgba(236, 253, 245, 1);
+  --primitives-green-600: rgba(5, 150, 105, 1);
+  --primitives-red-50: rgba(254, 242, 242, 1);
+  --primitives-red-600: rgba(220, 38, 38, 1);
+  --primitives-white: rgba(255, 255, 255, 1);
+  --radius-radius-full: 999px;
+  --radius-radius-lg: 14px;
+  --radius-radius-md: 10px;
+  --radius-radius-sm: 6px;
+  --small-font-family: "Inter", Helvetica;
+  --small-font-size: 12px;
+  --small-font-style: normal;
+  --small-font-weight: 400;
+  --small-letter-spacing: 0px;
+  --small-line-height: 16px;
+  --spacing-spacing-1: 4px;
+  --spacing-spacing-10: 40px;
+  --spacing-spacing-12: 48px;
+  --spacing-spacing-2: 8px;
+  --spacing-spacing-3: 12px;
+  --spacing-spacing-4: 16px;
+  --spacing-spacing-5: 20px;
+  --spacing-spacing-6: 24px;
+  --spacing-spacing-8: 32px;
+  --table-header-font-family: "Inter", Helvetica;
+  --table-header-font-size: 12px;
+  --table-header-font-style: normal;
+  --table-header-font-weight: 600;
+  --table-header-letter-spacing: 0px;
+  --table-header-line-height: 16px;
+}
+
+:root {
+  --animate-spin: spin 1s linear infinite;
+}
+
+.animate-fade-in {
+  animation: fade-in 1s var(--animation-delay, 0s) ease forwards;
+}
+
+.animate-fade-up {
+  animation: fade-up 1s var(--animation-delay, 0s) ease forwards;
+}
+
+.animate-marquee {
+  animation: marquee var(--duration) infinite linear;
+}
+
+.animate-marquee-vertical {
+  animation: marquee-vertical var(--duration) linear infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 8s infinite;
+}
+
+.animate-spin {
+  animation: var(--animate-spin);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes image-glow {
+  0% {
+    opacity: 0;
+    animation-timing-function: cubic-bezier(0.74, 0.25, 0.76, 1);
+  }
+
+  10% {
+    opacity: 0.7;
+    animation-timing-function: cubic-bezier(0.12, 0.01, 0.08, 0.99);
+  }
+
+  to {
+    opacity: 0.4;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes shimmer {
+  0%,
+  90%,
+  to {
+    background-position: calc(-100% - var(--shimmer-width)) 0;
+  }
+
+  30%,
+  60% {
+    background-position: calc(100% + var(--shimmer-width)) 0;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate(0);
+  }
+
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+@keyframes marquee-vertical {
+  0% {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+  }
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+
+    --card: transparent;
+    --card-foreground: 222.2 47.4% 11.2%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 215 20.2% 65.1%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20.2% 65.1%;
+
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+
+    --card: transparent;
+    --card-foreground: 213 31% 91%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 1.2%;
+
+    --secondary: 222.2 47.4% 11.2%;
+    --secondary-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 216 34% 17%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
+  }
+}

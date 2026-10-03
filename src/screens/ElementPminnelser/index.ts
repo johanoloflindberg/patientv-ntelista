@@ -1,0 +1,1 @@
+export { ElementPminnelser } from "./ElementPminnelser";

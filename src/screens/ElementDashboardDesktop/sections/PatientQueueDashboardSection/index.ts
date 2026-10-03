@@ -1,0 +1,1 @@
+export { PatientQueueDashboardSection } from "./PatientQueueDashboardSection";

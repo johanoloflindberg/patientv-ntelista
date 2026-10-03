@@ -1,0 +1,1 @@
+export { ElementNyPatient } from "./ElementNyPatient";
