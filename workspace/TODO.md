@@ -23,4 +23,17 @@ This file powers chat suggestion chips. Keep it focused and actionable.
 - Don't be afraid to suggest features the user hasn't explicitly mentioned.
 </instructions>
 
-<!-- Add tasks here only when there are real next steps. -->
+<todo id="package-release">
+Automate package releases
+Add semantic versioning, release notes, and registry publishing through a CI workflow.
+</todo>
+
+<todo id="package-accessibility">
+Add accessibility regression tests
+Validate keyboard navigation, focus states, labels, and ARIA behavior for every public component.
+</todo>
+
+<todo id="package-visual-regression">
+Add visual regression coverage
+Capture every playground theme and component state to detect unintended styling changes before release.
+</todo>

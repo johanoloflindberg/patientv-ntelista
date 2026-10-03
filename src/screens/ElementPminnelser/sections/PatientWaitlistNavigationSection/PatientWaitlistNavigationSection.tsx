@@ -1,4 +1,4 @@
-import { Button } from "../../../../components/ui/button";
+import { Button } from "../../../../public-api";
 
 const navigationItems = [
   { label: "Dashboard", active: false },

@@ -24,8 +24,83 @@ After a few seconds, your project should be accessible at the address
 [http://localhost:5173/](http://localhost:5173/)
 
 
-If you are satisfied with the result, you can finally build the project for release with:
+If you are satisfied with the result, you can finally build the application for release with:
 
-```
+```sh
 npm run build
 ```
+
+## Using the component package
+
+Build the reusable package separately from the application:
+
+```sh
+npm run build:package
+```
+
+The command creates ESM, CommonJS, TypeScript declaration, source map, and stylesheet files in `dist`.
+
+Install the package in a React 18 application and import its stylesheet once near the application entry point:
+
+```tsx
+import "anima-project/styles.css";
+import { Badge, Button, Card, CardContent, CardHeader, CardTitle } from "anima-project";
+
+export function Example() {
+  return (
+    <Card className="max-w-md">
+      <CardHeader>
+        <CardTitle>Patient overview</CardTitle>
+      </CardHeader>
+      <CardContent className="flex items-center gap-3">
+        <Badge variant="secondary">Active</Badge>
+        <Button type="button">Open record</Button>
+      </CardContent>
+    </Card>
+  );
+}
+```
+
+The root package export includes:
+
+- `Badge`, `Button`, and their variant helpers
+- `Card` and its composition components
+- `Input`, `Label`, and `Textarea`
+- `Table` and its composition components
+- `Toggle` and `ToggleGroup`
+- `cn` for conditional class composition
+- Public TypeScript types such as `BadgeProps` and `ButtonProps`
+
+All components forward refs and accept their corresponding native element props. Components with variants expose typed `variant` and `size` properties.
+
+### Styling and themes
+
+The packaged stylesheet contains the component utility classes and default light and dark theme tokens. Add the `dark` class to an ancestor to enable the dark theme:
+
+```tsx
+<div className="dark">
+  <Button>Dark theme button</Button>
+</div>
+```
+
+Theme values can be customized by overriding the package CSS variables after importing `anima-project/styles.css`:
+
+```css
+:root {
+  --primary: 221 83% 53%;
+  --primary-foreground: 210 40% 98%;
+  --radius: 0.75rem;
+}
+```
+
+Consumer-provided Tailwind classes passed through `className` require Tailwind to be configured in the consuming application. Standard CSS classes work without Tailwind.
+
+## Verifying package consumption
+
+Run the isolated consumer verification before publishing:
+
+```sh
+npm run verify:package
+```
+
+This command builds the package, type-checks a separate React consumer against the emitted declarations, and bundles that consumer against the generated ESM and CSS files. Verification output is written to `dist-consumer`.

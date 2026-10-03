@@ -1,16 +1,16 @@
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { Badge } from "../../../../components/ui/badge";
-import { Button } from "../../../../components/ui/button";
-import { Input } from "../../../../components/ui/input";
 import {
+  Badge,
+  Button,
+  Input,
   Table,
   TableBody,
   TableCell,
   TableHead,
   TableHeader,
   TableRow,
-} from "../../../../components/ui/table";
+} from "../../../../public-api";
 
 type WaitingPatient = {
   queue: string;

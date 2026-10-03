@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
-import { Button } from "../../../../components/ui/button";
-import { Card, CardContent } from "../../../../components/ui/card";
-import { Input } from "../../../../components/ui/input";
+import { Button, Card, CardContent, Input } from "../../../../public-api";
 
 const metrics = [
   {

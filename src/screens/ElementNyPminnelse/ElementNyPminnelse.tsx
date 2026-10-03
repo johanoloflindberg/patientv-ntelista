@@ -1,13 +1,13 @@
-import { Button } from "../../components/ui/button";
 import {
+  Button,
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "../../components/ui/card";
-import { Input } from "../../components/ui/input";
-import { Label } from "../../components/ui/label";
+  Input,
+  Label,
+} from "../../public-api";
 
 const reminderFields = {
   patient: "Anna Andersson · PAT-000124",

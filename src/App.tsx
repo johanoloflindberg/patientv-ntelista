@@ -1,4 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { ComponentPlayground } from "./screens/ComponentPlayground/ComponentPlayground";
 import { ElementDashboardDesktop } from "./screens/ElementDashboardDesktop/ElementDashboardDesktop";
 import { ElementNyPatient } from "./screens/ElementNyPatient";
 import { ElementNyPminnelse } from "./screens/ElementNyPminnelse";
@@ -11,6 +12,10 @@ import { ElementVntelistaAktiva } from "./screens/ElementVntelistaAktiva/Element
 import { ElementVntelistaDesktop } from "./screens/ElementVntelistaDesktop/ElementVntelistaDesktop";
 
 const router = createBrowserRouter([
+  {
+    path: "/components",
+    element: <ComponentPlayground />,
+  },
   {
     path: "/*",
     element: <ElementDashboardDesktop />,

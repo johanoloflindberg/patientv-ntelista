@@ -1,13 +1,13 @@
 import { useState } from "react";
-import { Badge } from "../../../../components/ui/badge";
-import { Button } from "../../../../components/ui/button";
 import {
+  Badge,
+  Button,
   Card,
   CardContent,
   CardHeader,
   CardTitle,
-} from "../../../../components/ui/card";
-import { Input } from "../../../../components/ui/input";
+  Input,
+} from "../../../../public-api";
 
 const historyItems = [
   "Idag 11:25  ·  Patient flaggad  ·  av Johan",

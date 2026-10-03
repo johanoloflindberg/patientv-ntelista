@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
-import { Button } from "../../../../components/ui/button";
-import { Card, CardContent } from "../../../../components/ui/card";
-import { Input } from "../../../../components/ui/input";
 import {
+  Button,
+  Card,
+  CardContent,
+  Input,
   ToggleGroup,
   ToggleGroupItem,
-} from "../../../../components/ui/toggle-group";
+} from "../../../../public-api";
 
 const historyItems = [
   "Idag 11:25  ·  Patient flaggad  ·  av Johan",
