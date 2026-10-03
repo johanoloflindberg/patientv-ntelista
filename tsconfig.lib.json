@@ -13,5 +13,11 @@
     "src/public-api.ts",
     "src/package/**/*.ts",
     "src/package/**/*.tsx"
+  ],
+  "exclude": [
+    "src/package/**/*.test.ts",
+    "src/package/**/*.test.tsx",
+    "src/package/**/*.stories.ts",
+    "src/package/**/*.stories.tsx"
   ]
 }

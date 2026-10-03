@@ -1,5 +1,8 @@
 import { useMemo, useState, type CSSProperties, type ReactNode } from "react";
 import {
+  Alert,
+  AlertDescription,
+  AlertTitle,
   Badge,
   Button,
   Card,
@@ -10,6 +13,8 @@ import {
   CardTitle,
   Input,
   Label,
+  Separator,
+  Skeleton,
   Table,
   TableBody,
   TableCaption,
@@ -152,6 +157,37 @@ export const ComponentPlayground = () => {
       ),
     },
     {
+      id: "feedback",
+      name: "Alert · Skeleton · Separator",
+      description:
+        "Feedback primitives for errors, loading placeholders, and visual division.",
+      tags: ["feedback", "loading", "a11y"],
+      content: (
+        <>
+          <Preview className="flex-col items-stretch">
+            <Alert>
+              <AlertTitle>Information</AlertTitle>
+              <AlertDescription>Allmänt meddelande till användaren.</AlertDescription>
+            </Alert>
+            <Alert variant="destructive">
+              <AlertTitle>Fel</AlertTitle>
+              <AlertDescription>Något gick fel vid sparning.</AlertDescription>
+            </Alert>
+            <Alert variant="warning">
+              <AlertTitle>Varning</AlertTitle>
+              <AlertDescription>Påminnelse är förfallen.</AlertDescription>
+            </Alert>
+            <div className="flex w-full flex-col gap-2">
+              <Skeleton className="h-4 w-1/3" />
+              <Skeleton className="h-4 w-2/3" />
+              <Skeleton className="h-10 w-full" />
+            </div>
+            <Separator />
+          </Preview>
+        </>
+      ),
+    },
+    {
       id: "badge",
       name: "Badge",
       description:
@@ -163,6 +199,10 @@ export const ComponentPlayground = () => {
             <Badge>Default</Badge>
             <Badge variant="secondary">Secondary</Badge>
             <Badge variant="outline">Outline</Badge>
+            <Badge variant="soft">Soft</Badge>
+            <Badge variant="accent">Accent</Badge>
+            <Badge variant="success">Success</Badge>
+            <Badge variant="warning">Warning</Badge>
             <Badge variant="destructive">Destructive</Badge>
           </Preview>
           <CodeSample>{`<Badge variant="secondary">In review</Badge>`}</CodeSample>

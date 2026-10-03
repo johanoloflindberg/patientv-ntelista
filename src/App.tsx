@@ -1,4 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+import { AppProviders } from "./app/providers/AppProviders";
 import { ComponentPlayground } from "./screens/ComponentPlayground/ComponentPlayground";
 import { ElementDashboardDesktop } from "./screens/ElementDashboardDesktop/ElementDashboardDesktop";
 import { ElementNyPatient } from "./screens/ElementNyPatient";
@@ -11,13 +13,21 @@ import { ElementPotentiell } from "./screens/ElementPotentiell/ElementPotentiell
 import { ElementVntelistaAktiva } from "./screens/ElementVntelistaAktiva/ElementVntelistaAktiva";
 import { ElementVntelistaDesktop } from "./screens/ElementVntelistaDesktop/ElementVntelistaDesktop";
 
+/**
+ * Routing strategy (React Router v6):
+ * - URL owns shareable filter/nav state (e.g. ?status=active)
+ * - Keep Anima route ids for screen-graph compatibility
+ *
+ * Antagande: Vite + React Router behålls (ej Next.js / TanStack Router)
+ * för att skydda package-build och Anima screen-graph.
+ */
 const router = createBrowserRouter([
   {
     path: "/components",
     element: <ComponentPlayground />,
   },
   {
-    path: "/*",
+    path: "/",
     element: <ElementDashboardDesktop />,
   },
   {
@@ -60,8 +70,16 @@ const router = createBrowserRouter([
     path: "/x04-patientdetalj-u47-desktop",
     element: <ElementPatientdetaljWrapper />,
   },
+  {
+    path: "/*",
+    element: <ElementDashboardDesktop />,
+  },
 ]);
 
 export const App = () => {
-  return <RouterProvider router={router} />;
+  return (
+    <AppProviders>
+      <RouterProvider router={router} />
+    </AppProviders>
+  );
 };

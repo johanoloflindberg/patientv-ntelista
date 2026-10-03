@@ -1,3 +1,6 @@
+export { Alert, AlertDescription, AlertTitle, alertVariants } from "./package/components/ui/alert.tsx";
+export type { AlertProps } from "./package/components/ui/alert.tsx";
+
 export { Badge, badgeVariants } from "./package/components/ui/badge.tsx";
 export type { BadgeProps } from "./package/components/ui/badge.tsx";
 
@@ -13,8 +16,23 @@ export {
   CardTitle,
 } from "./package/components/ui/card.tsx";
 
+export {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "./package/components/ui/dialog.tsx";
+
 export { Input } from "./package/components/ui/input.tsx";
 export { Label } from "./package/components/ui/label.tsx";
+export { Separator } from "./package/components/ui/separator.tsx";
+export type { SeparatorProps } from "./package/components/ui/separator.tsx";
+export { Skeleton } from "./package/components/ui/skeleton.tsx";
+export type { SkeletonProps } from "./package/components/ui/skeleton.tsx";
 
 export {
   Table,
