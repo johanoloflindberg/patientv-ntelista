@@ -1,8 +1,8 @@
 <instructions>
-This file will be automatically added to your context. 
+This file will be automatically added to your context.
 It serves multiple purposes:
   1. Storing frequently used tools so you can use them without searching each time
-  2. Recording the user's code style preferences (naming conventions, preferred libraries, etc.)
+  2. Storing the user's code style preferences (naming conventions, preferred libraries, etc.)
   3. Maintaining useful information about the codebase structure and organization
   4. Remembering tricky quirks from this codebase
 
@@ -11,6 +11,14 @@ Keep entries sorted in DESC order (newest first) so recent knowledge stays in pr
 </instructions>
 
 <coder>
+## 2026-10-03
+- Architecture upgrade: AppShell + AppProviders (Query + next-themes + ErrorBoundary); screens should prefer layout primitives over duplicated sidebars.
+- Design tokens live in `src/package/styles.css` (Shadcn HSL variables, light/dark). App entry imports that stylesheet from `src/index.tsx`.
+- Server-state via TanStack Query (`src/lib/query-client.ts`, `src/features/*`); mock API in `src/api/mock-data.ts`.
+- Forms: react-hook-form + Zod schemas in `src/schemas` (shared client/server contract).
+- Waitlist filters belong in the URL (`?status=active`), not only local React state.
+- Storybook 9 + Vitest are part of CI-quality loop (`npm run ci`).
+- ADR: keep Vite + React Router (not Next.js / TanStack Router yet) — `docs/ADR/0001-keep-vite-react-router.md`.
 ## 2026-10-03
 - Playground convention: the searchable public component catalog is available at `/components` and lives in `src/screens/ComponentPlayground/ComponentPlayground.tsx`.
 - Playground coverage: document each public primitive, all CVA variants and sizes, light/dark/custom themes, interactive states, and realistic compositions.

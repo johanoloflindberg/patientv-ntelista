@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "type": "module",
   "source": "./src/public-api.ts",
   "main": "./dist/index.cjs",
@@ -14,29 +14,52 @@
     },
     "./styles.css": "./dist/styles.css"
   },
-  "files": ["dist"],
-  "sideEffects": ["**/*.css"],
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
   "name": "anima-project",
-  "description": "Reusable React UI components generated with Anima and Shadcn UI",
+  "description": "PhysioQueue UI — Shadcn/ui components with Tailwind CSS variables",
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "build:package": "tsc -p tsconfig.lib.json && vite build --config vite.lib.config.ts",
-    "verify:package": "npm run build:package && tsc -p verification/tsconfig.json --noEmit && vite build --config vite.verify.config.ts"
+    "verify:package": "npm run build:package && tsc -p verification/tsconfig.json --noEmit && vite build --config vite.verify.config.ts",
+    "typecheck": "tsc -p tsconfig.app.json --noEmit",
+    "lint": "eslint src --max-warnings=0",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "ci": "npm run typecheck && npm run test && npm run build && npm run build:package"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.10.0",
+    "@radix-ui/react-dialog": "^1.1.6",
+    "@radix-ui/react-label": "^2.1.0",
+    "@radix-ui/react-separator": "^1.1.2",
+    "@radix-ui/react-slot": "^1.1.2",
+    "@radix-ui/react-toggle": "^1.1.0",
+    "@radix-ui/react-toggle-group": "^1.1.0",
+    "@tanstack/react-query": "^5.66.9",
+    "@tanstack/react-table": "^8.21.2",
+    "class-variance-authority": "^0.7.0",
     "clsx": "2.1.1",
+    "framer-motion": "^11.18.2",
     "lucide-react": "^0.453.0",
+    "next-themes": "^0.4.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.54.2",
     "react-router-dom": "^6.30.0",
     "tailwind-merge": "2.5.4",
     "tailwindcss-animate": "1.0.7",
-    "@radix-ui/react-slot": "^1.1.0",
-    "class-variance-authority": "^0.7.0",
-    "@radix-ui/react-toggle-group": "^1.1.0",
-    "@radix-ui/react-toggle": "^1.1.0",
-    "@radix-ui/react-label": "^2.1.0"
+    "zod": "^3.24.2"
   },
   "peerDependencies": {
     "react": "^18.2.0",
@@ -44,14 +67,27 @@
   },
   "devDependencies": {
     "@animaapp/vite-plugin-screen-graph": "^0.1.5",
+    "@storybook/addon-a11y": "^9.1.10",
+    "@storybook/react": "^9.1.10",
+    "@storybook/react-vite": "^9.1.10",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.2.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/node": "^22.13.4",
     "@types/react": "18.3.28",
     "@types/react-dom": "18.3.7",
     "@vitejs/plugin-react": "5.1.4",
     "esbuild": "0.27.3",
+    "eslint": "^9.20.1",
     "globals": "15.15.0",
+    "jsdom": "^26.0.0",
+    "storybook": "^9.1.10",
     "tailwindcss": "3.4.16",
     "typescript": "5.9.3",
-    "vite": "7.3.1"
+    "typescript-eslint": "^8.46.0",
+    "vite": "7.3.1",
+    "vitest": "^3.0.5"
   },
   "alias": {
     "@/*": "./src/components/ui/$1"
